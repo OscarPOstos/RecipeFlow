@@ -16,3 +16,43 @@ Content-Type: application/json
   "email": "test@example.com",
   "password": "securePassword123"
 }
+
+###
+
+GET http://localhost:3000/recipes/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzI0MzUxMiwiZXhwIjoxNzMzMjQ3MTEyfQ.ZsZZSm3X8NaOWpBSS2ImjL4R8bQMcnV6PpZT7d93AjU
+
+###
+
+GET http://localhost:3000/recipes/1733243746426
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzI0MzUxMiwiZXhwIjoxNzMzMjQ3MTEyfQ.ZsZZSm3X8NaOWpBSS2ImjL4R8bQMcnV6PpZT7d93AjU
+
+###
+
+POST http://localhost:3000/recipes/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzI0MzUxMiwiZXhwIjoxNzMzMjQ3MTEyfQ.ZsZZSm3X8NaOWpBSS2ImjL4R8bQMcnV6PpZT7d93AjU
+
+{
+  "title": "Tacos Veganos",
+  "description": "Deliciosos tacos veganos con aguacate y frijoles negros.",
+  "ingredients": ["tortillas", "aguacate", "frijoles negros", "limón"],
+  "category": "Cena",
+  "tags": ["vegano", "rápido"]
+}
+
+###
+
+PUT http://localhost:3000/recipes/1733243746426
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzI0MzUxMiwiZXhwIjoxNzMzMjQ3MTEyfQ.ZsZZSm3X8NaOWpBSS2ImjL4R8bQMcnV6PpZT7d93AjU
+
+{
+  "title": "Tacos Veganos Actualizados",
+  "ingredients": ["tortillas", "aguacate", "frijoles negros", "salsa picante"]
+}
+
+###
+
+DELETE http://localhost:3000/recipes/1733243746426
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzI0MzUxMiwiZXhwIjoxNzMzMjQ3MTEyfQ.ZsZZSm3X8NaOWpBSS2ImjL4R8bQMcnV6PpZT7d93AjU
