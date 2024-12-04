@@ -6,6 +6,7 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { RecipesModule } from './recipes/recipes.module';
+import { MealPlansModule } from './meal-plans/meal-plans.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -24,7 +25,7 @@ import { RecipesModule } from './recipes/recipes.module';
       autoLoadEntities: true,
       synchronize: configService.get<boolean>('DB_SYNCHRONIZE'), // false en producción
     }),
-  }), AuthModule, UserModule, RecipesModule],
+  }), AuthModule, UserModule, RecipesModule, MealPlansModule],
   controllers: [AppController],
   providers: [AppService],
 })
