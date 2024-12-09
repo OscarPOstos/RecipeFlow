@@ -31,7 +31,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsI
 
 POST http://localhost:3000/recipes/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzI0MzUxMiwiZXhwIjoxNzMzMjQ3MTEyfQ.ZsZZSm3X8NaOWpBSS2ImjL4R8bQMcnV6PpZT7d93AjU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzMyOTI1NSwiZXhwIjoxNzMzMzMyODU1fQ.kgmMGknRno7R4sIyhdw1nXmM755rejUBFGdjbW5XJfw
 
 {
   "title": "Tacos Veganos",
@@ -56,3 +56,89 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsI
 
 DELETE http://localhost:3000/recipes/1733243746426
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzI0MzUxMiwiZXhwIjoxNzMzMjQ3MTEyfQ.ZsZZSm3X8NaOWpBSS2ImjL4R8bQMcnV6PpZT7d93AjU
+
+### Obtener todos los planes de comida
+GET http://localhost:3000/meal-plans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzMyOTI1NSwiZXhwIjoxNzMzMzMyODU1fQ.kgmMGknRno7R4sIyhdw1nXmM755rejUBFGdjbW5XJfw
+
+###
+
+### Generar un plan de comidas basado en preferencias
+POST http://localhost:3000/meal-plans/generate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzMyOTI1NSwiZXhwIjoxNzMzMzMyODU1fQ.kgmMGknRno7R4sIyhdw1nXmM755rejUBFGdjbW5XJfw
+
+{
+  "dietaryPreference": "vegano",
+  "restrictions": ["sin gluten", "sin lactosa"],
+  "availableIngredients": ["tomate", "aguacate"]
+}
+
+###
+
+### Crear un plan de comidas personalizado
+POST http://localhost:3000/meal-plans
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzMyOTI1NSwiZXhwIjoxNzMzMzMyODU1fQ.kgmMGknRno7R4sIyhdw1nXmM755rejUBFGdjbW5XJfw
+
+{
+  "name": "Plan semanal saludable",
+  "recipeIds": ["receta1Id", "receta2Id", "receta3Id"]
+}
+
+###
+
+### Actualizar un plan de comidas existente
+PUT http://localhost:3000/meal-plans/1733329369885
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzMyOTI1NSwiZXhwIjoxNzMzMzMyODU1fQ.kgmMGknRno7R4sIyhdw1nXmM755rejUBFGdjbW5XJfw
+
+{
+  "name": "Plan semanal actualizado",
+  "recipeIds": ["receta4Id", "receta5Id"]
+}
+
+###
+
+### Eliminar un plan de comidas
+DELETE http://localhost:3000/meal-plans/1733329369885
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzMyOTI1NSwiZXhwIjoxNzMzMzMyODU1fQ.kgmMGknRno7R4sIyhdw1nXmM755rejUBFGdjbW5XJfw
+
+# Obtener la lista de compras generada
+GET http://localhost:3000/shopping-list/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzc2MjY0MiwiZXhwIjoxNzMzNzY2MjQyfQ.iJAyVkm32tVJWgcRmN4v9sA6_IioxdIYbxIwQo3AOy8
+
+###
+
+# Generar una lista de compras basada en un plan de comidas
+POST http://localhost:3000/shopping-list/generate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzc2MjY0MiwiZXhwIjoxNzMzNzY2MjQyfQ.iJAyVkm32tVJWgcRmN4v9sA6_IioxdIYbxIwQo3AOy8
+Content-Type: application/json
+
+{
+  "mealPlanId": "example-meal-plan-id"
+}
+
+###
+
+# Marcar ingredientes como "en inventario"
+PUT http://localhost:3000/shopping-list/update
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzc2MjY0MiwiZXhwIjoxNzMzNzY2MjQyfQ.iJAyVkm32tVJWgcRmN4v9sA6_IioxdIYbxIwQo3AOy8
+Content-Type: application/json
+
+{
+  "ingredient": "Tomates",
+  "inInventory": true
+}
+
+###
+
+# Exportar la lista de compras como PDF
+GET http://localhost:3000/shopping-list/export?format=pdf
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzc2MjY0MiwiZXhwIjoxNzMzNzY2MjQyfQ.iJAyVkm32tVJWgcRmN4v9sA6_IioxdIYbxIwQo3AOy8
+
+###
+
+# Exportar la lista de compras como correo electrónico
+GET http://localhost:3000/shopping-list/export?format=email
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzc2MjY0MiwiZXhwIjoxNzMzNzY2MjQyfQ.iJAyVkm32tVJWgcRmN4v9sA6_IioxdIYbxIwQo3AOy8
