@@ -8,6 +8,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { RecipesModule } from './recipes/recipes.module';
 import { MealPlansModule } from './meal-plans/meal-plans.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { PreferencesModule } from './preferences/preferences.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -26,7 +27,7 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
       autoLoadEntities: true,
       synchronize: configService.get<boolean>('DB_SYNCHRONIZE'), // false en producción
     }),
-  }), AuthModule, UserModule, RecipesModule, MealPlansModule, ShoppingListModule],
+  }), AuthModule, UserModule, RecipesModule, MealPlansModule, ShoppingListModule, PreferencesModule],
   controllers: [AppController],
   providers: [AppService],
 })

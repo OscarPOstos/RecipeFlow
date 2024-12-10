@@ -104,7 +104,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsI
 DELETE http://localhost:3000/meal-plans/1733329369885
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzMyOTI1NSwiZXhwIjoxNzMzMzMyODU1fQ.kgmMGknRno7R4sIyhdw1nXmM755rejUBFGdjbW5XJfw
 
-# Obtener la lista de compras generada
+### Obtener la lista de compras generada
 GET http://localhost:3000/shopping-list/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzc2MjY0MiwiZXhwIjoxNzMzNzY2MjQyfQ.iJAyVkm32tVJWgcRmN4v9sA6_IioxdIYbxIwQo3AOy8
 
@@ -142,3 +142,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsI
 # Exportar la lista de compras como correo electrónico
 GET http://localhost:3000/shopping-list/export?format=email
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzc2MjY0MiwiZXhwIjoxNzMzNzY2MjQyfQ.iJAyVkm32tVJWgcRmN4v9sA6_IioxdIYbxIwQo3AOy8
+
+### Ver preferencias actuales
+GET http://localhost:3000/preferences
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzgzOTk2OSwiZXhwIjoxNzMzODQzNTY5fQ.XgK5zT3yLN4BFOjGzZrf3H1GK8zmdMnUTt6Vbx468Go
+
+### Actualizar preferencias alimenticias y restricciones
+PUT http://localhost:3000/preferences
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzgzOTk2OSwiZXhwIjoxNzMzODQzNTY5fQ.XgK5zT3yLN4BFOjGzZrf3H1GK8zmdMnUTt6Vbx468Go
+Content-Type: application/json
+
+{
+  "dietaryPreferences": ["vegano"],
+  "dietaryRestrictions": ["frutos secos"],
+  "preferredIngredients": ["tomates", "pollo"],
+  "excludedIngredients": ["berenjenas"]
+}
