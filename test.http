@@ -135,7 +135,7 @@ Content-Type: application/json
 
 # Exportar la lista de compras como PDF
 GET http://localhost:3000/shopping-list/export?format=pdf
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzc2MjY0MiwiZXhwIjoxNzMzNzY2MjQyfQ.iJAyVkm32tVJWgcRmN4v9sA6_IioxdIYbxIwQo3AOy8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTczMzgzOTk2OSwiZXhwIjoxNzMzODQzNTY5fQ.XgK5zT3yLN4BFOjGzZrf3H1GK8zmdMnUTt6Vbx468Go
 
 ###
 

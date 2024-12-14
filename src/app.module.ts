@@ -9,6 +9,7 @@ import { RecipesModule } from './recipes/recipes.module';
 import { MealPlansModule } from './meal-plans/meal-plans.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { PreferencesModule } from './preferences/preferences.module';
+import { StatisticsModule } from './statistics/statistics.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -27,7 +28,7 @@ import { PreferencesModule } from './preferences/preferences.module';
       autoLoadEntities: true,
       synchronize: configService.get<boolean>('DB_SYNCHRONIZE'), // false en producción
     }),
-  }), AuthModule, UserModule, RecipesModule, MealPlansModule, ShoppingListModule, PreferencesModule],
+  }), AuthModule, UserModule, RecipesModule, MealPlansModule, ShoppingListModule, PreferencesModule, StatisticsModule],
   controllers: [AppController],
   providers: [AppService],
 })
