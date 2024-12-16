@@ -10,6 +10,7 @@ import { MealPlansModule } from './meal-plans/meal-plans.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { PreferencesModule } from './preferences/preferences.module';
 import { StatisticsModule } from './statistics/statistics.module';
+import { FamilyGroupModule } from './family-group/family-group.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -28,7 +29,7 @@ import { StatisticsModule } from './statistics/statistics.module';
       autoLoadEntities: true,
       synchronize: configService.get<boolean>('DB_SYNCHRONIZE'), // false en producción
     }),
-  }), AuthModule, UserModule, RecipesModule, MealPlansModule, ShoppingListModule, PreferencesModule, StatisticsModule],
+  }), AuthModule, UserModule, RecipesModule, MealPlansModule, ShoppingListModule, PreferencesModule, StatisticsModule, FamilyGroupModule],
   controllers: [AppController],
   providers: [AppService],
 })
